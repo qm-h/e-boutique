@@ -2,16 +2,17 @@
 
 namespace App\Entity;
 
+use App\Entity\Categories;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
-use App\Entity\Categories;
 
 /**
  * Articles
  *
  * @ORM\Table(name="articles", indexes={@ORM\Index(name="fk_category", columns={"idCategorie"})})
  * @ORM\Entity
+ * @ORM\Entity(repositoryClass="App\Repository\ArticlesRepository")
  */
 class Articles
 {
@@ -71,7 +72,7 @@ class Articles
      *
      * @ORM\ManyToOne(targetEntity="Categories")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="idCategorie", referencedColumnName="idCategorie")
+     * @ORM\JoinColumn(name="idCategorie", referencedColumnName="idCategorie")
      * })
      */
     private $idcategorie;

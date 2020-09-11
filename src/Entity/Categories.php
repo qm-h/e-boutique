@@ -9,6 +9,7 @@ use Doctrine\ORM\Mapping as ORM;
  *
  * @ORM\Table(name="categories")
  * @ORM\Entity
+ * @ORM\Entity(repositoryClass="App\Repository\CategoriesRepository")
  */
 class Categories
 {
@@ -44,6 +45,5 @@ class Categories
 
         return $this;
     }
-
 
 }

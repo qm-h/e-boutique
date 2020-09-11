@@ -11,6 +11,7 @@ use Doctrine\ORM\Mapping as ORM;
  *
  * @ORM\Table(name="commandes")
  * @ORM\Entity
+ * @ORM\Entity(repositoryClass="App\Repository\CommandesRepository")
  */
 class Commandes
 {
