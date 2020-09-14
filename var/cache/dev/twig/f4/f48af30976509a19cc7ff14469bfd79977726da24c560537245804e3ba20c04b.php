@@ -93,29 +93,24 @@ class __TwigTemplate_ddfeabe43a2cc8df59fcb43155eb24962425fd7cb0b8de6a30c6f903496
         $context['_seq'] = twig_ensure_traversable((isset($context["articles"]) || array_key_exists("articles", $context) ? $context["articles"] : (function () { throw new RuntimeError('Variable "articles" does not exist.', 9, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["article"]) {
             // line 10
-            echo "
-    ";
-            // line 24
-            echo "
-
-<div class=\"row row-cols-1 row-cols-md-2\">
-  <div class=\"col mb-4\">
-    <div class=\"card\">
-      <img src=\"...\" class=\"card-img-top\" alt=\"...\">
-      <div class=\"card-body\">
-        <h5 class=\"card-title\">";
-            // line 31
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["article"], "nomarticle", [], "any", false, false, false, 31), "html", null, true);
+            echo "    <div class=\"container\">
+      <div class=\"row row-cols-1 row-cols-md-2\">
+        <div class=\"col mb-4\">
+          <div class=\"card\">
+            <img src=\"...\" class=\"card-img-top\" alt=\"...\">
+            <div class=\"card-body\">
+              <h5 class=\"card-title\">";
+            // line 16
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["article"], "nomarticle", [], "any", false, false, false, 16), "html", null, true);
             echo "</h5>
-        <p class=\"card-text\">";
-            // line 32
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["article"], "descriptionarticle", [], "any", false, false, false, 32), "html", null, true);
+              <p class=\"card-text\">";
+            // line 17
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["article"], "descriptionarticle", [], "any", false, false, false, 17), "html", null, true);
             echo "</p>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-
-</div>
     ";
         }
         $_parent = $context['_parent'];
@@ -164,7 +159,7 @@ class __TwigTemplate_ddfeabe43a2cc8df59fcb43155eb24962425fd7cb0b8de6a30c6f903496
 
     public function getDebugInfo()
     {
-        return array (  143 => 7,  133 => 6,  112 => 32,  108 => 31,  99 => 24,  96 => 10,  92 => 9,  89 => 6,  79 => 5,  60 => 3,  37 => 1,);
+        return array (  138 => 7,  128 => 6,  108 => 17,  104 => 16,  96 => 10,  92 => 9,  89 => 6,  79 => 5,  60 => 3,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -178,34 +173,18 @@ class __TwigTemplate_ddfeabe43a2cc8df59fcb43155eb24962425fd7cb0b8de6a30c6f903496
         {{ parent() }}
     {% endblock %}
 {% for article in articles %}
-
-    {# 
-        <div class=\"container\">
-                <div class=\"card-deck\">
-            <div class=\"card\">
-                <img src=\"...\" class=\"card-img-top\" alt=\"...\">
-                <div class=\"card-body\">
-                        <h5 class=\"card-title\">{{article.nomarticle}}</h5>
-                        <p class=\"card-text\">{{article.descriptionarticle}}</p>
-                <p class=\"card-text\"><small class=\"text-muted\">Last updated 3 mins ago</small></p>
-                </div>
+    <div class=\"container\">
+      <div class=\"row row-cols-1 row-cols-md-2\">
+        <div class=\"col mb-4\">
+          <div class=\"card\">
+            <img src=\"...\" class=\"card-img-top\" alt=\"...\">
+            <div class=\"card-body\">
+              <h5 class=\"card-title\">{{article.nomarticle}}</h5>
+              <p class=\"card-text\">{{article.descriptionarticle}}</p>
             </div>
-            </div>
-        </div> #}
-
-
-<div class=\"row row-cols-1 row-cols-md-2\">
-  <div class=\"col mb-4\">
-    <div class=\"card\">
-      <img src=\"...\" class=\"card-img-top\" alt=\"...\">
-      <div class=\"card-body\">
-        <h5 class=\"card-title\">{{article.nomarticle}}</h5>
-        <p class=\"card-text\">{{article.descriptionarticle}}</p>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-
-</div>
     {% endfor %}
 {% endblock %}
 ", "articles/index.html.twig", "C:\\xampp\\htdocs\\Symfony\\e_boutique_2\\templates\\articles\\index.html.twig");
