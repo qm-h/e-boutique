@@ -89,38 +89,56 @@ class __TwigTemplate_ddfeabe43a2cc8df59fcb43155eb24962425fd7cb0b8de6a30c6f903496
         echo "    ";
         $this->displayBlock('header', $context, $blocks);
         // line 9
-        $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["articles"]) || array_key_exists("articles", $context) ? $context["articles"] : (function () { throw new RuntimeError('Variable "articles" does not exist.', 9, $this->source); })()));
-        foreach ($context['_seq'] as $context["_key"] => $context["article"]) {
-            // line 10
-            echo "
-    ";
-            // line 24
-            echo "
-
-<div class=\"row row-cols-1 row-cols-md-2\">
-  <div class=\"col mb-4\">
-    <div class=\"card\">
-      <img src=\"...\" class=\"card-img-top\" alt=\"...\">
-      <div class=\"card-body\">
-        <h5 class=\"card-title\">";
-            // line 31
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["article"], "nomarticle", [], "any", false, false, false, 31), "html", null, true);
-            echo "</h5>
-        <p class=\"card-text\">";
-            // line 32
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["article"], "descriptionarticle", [], "any", false, false, false, 32), "html", null, true);
-            echo "</p>
-      </div>
-    </div>
-  </div>
-
+        echo "<div>
+  <ul class=\"nav\">
+    <li class=\"nav-item\">
+      <a class=\"nav-link text-info active\" href=\"#\">All categories</a>
+    </li>
+    <li class=\"nav-item\">
+      <a class=\"nav-link text-info\" href=\"#\">Consoles</a>
+    </li>
+    <li class=\"nav-item\">
+      <a class=\"nav-link text-info\" href=\"#\">Jeux</a>
+    </li>
+  </ul>
 </div>
+
+<div class=\"container\">
+  <div class=\"row justify-content-center\">
+    ";
+        // line 25
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable((isset($context["articles"]) || array_key_exists("articles", $context) ? $context["articles"] : (function () { throw new RuntimeError('Variable "articles" does not exist.', 25, $this->source); })()));
+        foreach ($context['_seq'] as $context["_key"] => $context["article"]) {
+            // line 26
+            echo "    <div class=\"card col-lg-4 col-md-6 col-sm-6 col-12\">
+      <div class=\"card-body text-center\" width=\"261\">
+        <img src=\"\" class=\"card-img-top img-fluid img-size-max\" alt=\"\">
+          <div class=\"card-title\">
+            <span><i>";
+            // line 30
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["article"], "nomarticle", [], "any", false, false, false, 30), "html", null, true);
+            echo "</i></span>              
+              </div>
+                <div class=\"card-text text-justify\">
+                  <i>";
+            // line 33
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["article"], "descriptionarticle", [], "any", false, false, false, 33), "html", null, true);
+            echo "</i>
+                </div>
+              </div>
+            <div class=\"text-right mb-3\">
+          </div>
+      </div>
     ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['article'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 40
+        echo "  </div>
+</div>
+";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -164,7 +182,7 @@ class __TwigTemplate_ddfeabe43a2cc8df59fcb43155eb24962425fd7cb0b8de6a30c6f903496
 
     public function getDebugInfo()
     {
-        return array (  143 => 7,  133 => 6,  112 => 32,  108 => 31,  99 => 24,  96 => 10,  92 => 9,  89 => 6,  79 => 5,  60 => 3,  37 => 1,);
+        return array (  161 => 7,  151 => 6,  139 => 40,  126 => 33,  120 => 30,  114 => 26,  110 => 25,  92 => 9,  89 => 6,  79 => 5,  60 => 3,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -177,37 +195,40 @@ class __TwigTemplate_ddfeabe43a2cc8df59fcb43155eb24962425fd7cb0b8de6a30c6f903496
     {% block header %}
         {{ parent() }}
     {% endblock %}
-{% for article in articles %}
-
-    {# 
-        <div class=\"container\">
-                <div class=\"card-deck\">
-            <div class=\"card\">
-                <img src=\"...\" class=\"card-img-top\" alt=\"...\">
-                <div class=\"card-body\">
-                        <h5 class=\"card-title\">{{article.nomarticle}}</h5>
-                        <p class=\"card-text\">{{article.descriptionarticle}}</p>
-                <p class=\"card-text\"><small class=\"text-muted\">Last updated 3 mins ago</small></p>
-                </div>
-            </div>
-            </div>
-        </div> #}
-
-
-<div class=\"row row-cols-1 row-cols-md-2\">
-  <div class=\"col mb-4\">
-    <div class=\"card\">
-      <img src=\"...\" class=\"card-img-top\" alt=\"...\">
-      <div class=\"card-body\">
-        <h5 class=\"card-title\">{{article.nomarticle}}</h5>
-        <p class=\"card-text\">{{article.descriptionarticle}}</p>
-      </div>
-    </div>
-  </div>
-
+<div>
+  <ul class=\"nav\">
+    <li class=\"nav-item\">
+      <a class=\"nav-link text-info active\" href=\"#\">All categories</a>
+    </li>
+    <li class=\"nav-item\">
+      <a class=\"nav-link text-info\" href=\"#\">Consoles</a>
+    </li>
+    <li class=\"nav-item\">
+      <a class=\"nav-link text-info\" href=\"#\">Jeux</a>
+    </li>
+  </ul>
 </div>
+
+<div class=\"container\">
+  <div class=\"row justify-content-center\">
+    {% for article in articles %}
+    <div class=\"card col-lg-4 col-md-6 col-sm-6 col-12\">
+      <div class=\"card-body text-center\" width=\"261\">
+        <img src=\"\" class=\"card-img-top img-fluid img-size-max\" alt=\"\">
+          <div class=\"card-title\">
+            <span><i>{{article.nomarticle}}</i></span>              
+              </div>
+                <div class=\"card-text text-justify\">
+                  <i>{{article.descriptionarticle}}</i>
+                </div>
+              </div>
+            <div class=\"text-right mb-3\">
+          </div>
+      </div>
     {% endfor %}
+  </div>
+</div>
 {% endblock %}
-", "articles/index.html.twig", "C:\\xampp\\htdocs\\Symfony\\e_boutique_2\\templates\\articles\\index.html.twig");
+", "articles/index.html.twig", "C:\\xampp\\htdocs\\Symfony\\e-boutique\\templates\\articles\\index.html.twig");
     }
 }
