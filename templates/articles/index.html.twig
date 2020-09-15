@@ -1,0 +1,52 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ArticlesController!{% endblock %}
+
+{% block body %}
+    {% block header %}
+        {{ parent() }}
+    {% endblock %}
+
+<div class="row">
+    <nav class="col-12 navbar navbar-expand-md ml-4">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link text-dark" href="{{path('app_homepage')}}"><b>Toutes les catégories</b></a>
+                </li>
+                 {% for categorie in categories %}
+                <li class="nav-item">
+                    <a class="nav-link text-dark ml-4" href="/article/{{categorie.idcategorie}}"><b>{{categorie.nomcategorie}}</b></a>
+                </li>
+                {% endfor %} 
+            </ul>
+        </div>
+    </nav>
+</div>
+
+<div class="container">
+  <div class="row justify-content-center">
+    {% for article in articles %}
+      <div class="card col-lg-4 col-md-6 col-sm-6 col-12">
+        <div class="card-body text-center" width="261">
+          <img src="{{ asset ('image/' ~ article.imagearticle )}}" class="card-img-top img-fluid w-75" alt=""> <hr>
+            <div class="card-title">
+              <span class="font-weight-bold"><i>{{article.nomarticle}}</i></span> <hr>             
+            </div>
+
+            <div class="card-text text-justify">
+              <i>{{article.descriptionarticle}}</i> <hr>
+            </div>
+              <div class="col-12 d-flex justify-content-center">
+                <div class="">
+                  <p class="font-weight-bold">{{article.prixarticle}} €</p>
+                  <button type="button" class="btn btn-info">+</button>
+                </div>
+            </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</div> 
+ {% endblock %}  
+

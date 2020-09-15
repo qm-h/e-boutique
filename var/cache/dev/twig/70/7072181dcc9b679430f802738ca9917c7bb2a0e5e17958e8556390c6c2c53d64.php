@@ -154,6 +154,6 @@ class __TwigTemplate_63a08773ee0c3921bc6fa9d7b23fcd8bf8dc26fae2eea6981a258f2eaa2
     </ul>
 </div>
 {% endblock %}
-", "commandes/index.html.twig", "C:\\xampp\\htdocs\\Symfony\\e_boutique_2\\templates\\commandes\\index.html.twig");
+", "commandes/index.html.twig", "C:\\xampp\\htdocs\\Symfony\\e-boutique\\templates\\commandes\\index.html.twig");
     }
 }

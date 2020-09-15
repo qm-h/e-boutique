@@ -2,6 +2,8 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -45,5 +47,20 @@ class Categories
 
         return $this;
     }
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\Articles", mappedBy="categorie")
+     */
+    private $articles;
 
+    public function __construct()
+    {
+        $this->articles = new ArrayCollection();
+    }
+    /**
+     * @return Collection|Articles[]
+     */
+    public function getArticles(): Collection
+    {
+        return $this->articles;
+    }
 }

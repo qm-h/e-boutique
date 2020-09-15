@@ -66,10 +66,10 @@ class Categories extends \App\Entity\Categories implements \Doctrine\ORM\Proxy\P
     public function __sleep()
     {
         if ($this->__isInitialized__) {
-            return ['__isInitialized__', '' . "\0" . 'App\\Entity\\Categories' . "\0" . 'idcategorie', '' . "\0" . 'App\\Entity\\Categories' . "\0" . 'nomcategorie'];
+            return ['__isInitialized__', '' . "\0" . 'App\\Entity\\Categories' . "\0" . 'idcategorie', '' . "\0" . 'App\\Entity\\Categories' . "\0" . 'nomcategorie', '' . "\0" . 'App\\Entity\\Categories' . "\0" . 'articles'];
         }
 
-        return ['__isInitialized__', '' . "\0" . 'App\\Entity\\Categories' . "\0" . 'idcategorie', '' . "\0" . 'App\\Entity\\Categories' . "\0" . 'nomcategorie'];
+        return ['__isInitialized__', '' . "\0" . 'App\\Entity\\Categories' . "\0" . 'idcategorie', '' . "\0" . 'App\\Entity\\Categories' . "\0" . 'nomcategorie', '' . "\0" . 'App\\Entity\\Categories' . "\0" . 'articles'];
     }
 
     /**
@@ -211,6 +211,17 @@ class Categories extends \App\Entity\Categories implements \Doctrine\ORM\Proxy\P
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'setNomcategorie', [$nomcategorie]);
 
         return parent::setNomcategorie($nomcategorie);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getArticles(): \Doctrine\Common\Collections\Collection
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getArticles', []);
+
+        return parent::getArticles();
     }
 
 }
