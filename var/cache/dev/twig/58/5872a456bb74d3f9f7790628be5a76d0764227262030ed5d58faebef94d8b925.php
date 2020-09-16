@@ -154,6 +154,6 @@ class __TwigTemplate_9c5dc118974aa3548bbf6bb73fe852c726033274a8c8e01d6879f9f0c9d
     </ul>
 </div>
 {% endblock %}
-", "user_authentication/index.html.twig", "C:\\xampp\\htdocs\\Symfony\\e-boutique\\templates\\user_authentication\\index.html.twig");
+", "user_authentication/index.html.twig", "C:\\xampp\\htdocs\\Symfony\\test\\templates\\user_authentication\\index.html.twig");
     }
 }

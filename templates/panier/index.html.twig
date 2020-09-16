@@ -1,0 +1,69 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello CartController!{% endblock %}
+
+{% block body %}
+{% block header %}
+    {{ parent() }}
+{% endblock %}
+ <div class="bg-light p-3">
+        <h1>Votre panier</h1>
+    </div>
+    {% if panier | length > 0 %}
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Produit</th>
+                <th>Prix</th>
+                <th>Quantité</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in panier %}
+                <tr>
+                    <td> {{ item.nomarticle }} </td>
+                    <td> {{ item.prixarticle }} €</td>
+                    <td>  {{ app.session.get('panier').panier[item.idarticle] }}  </td>
+
+                    <td>
+                    <a href=" {{ path("cart_remove", {'id' : item.idarticle, 'prix' : item.prixarticle}) }} " class="btn btn-outline-danger btn-sm">
+                    <i class="ri-delete-bin-6-line"></i>
+                    </a>
+                    </td>
+                    
+                </tr>
+            {% endfor %} 
+        </tbody>
+        <tfoot>
+            <tr>
+                <td class="text-right"> Total :  </td>
+                <td> {{ total }}  €</td>
+                <td></td>
+            </tr>
+        </tfoot>
+    </table>
+    {% else %}
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Produit</th>
+                <th>Prix</th>
+                <th>Quantité</th>
+            </tr>
+        </thead>
+        <tbody>
+                <tr>
+                   <td><h5>Votre panier est vide</h5></td>
+               </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td class="text-right"> Total :  </td>
+                <td> {{ total }}  €</td>
+                <td></td>
+            </tr>
+        </tfoot>
+    </table>
+    
+    {% endif %}
+{% endblock %}

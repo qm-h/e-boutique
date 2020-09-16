@@ -35,7 +35,20 @@ class ArticlesRepository extends ServiceEntityRepository
     ;
     }
      */
+    public function findByArticles($keys)
+    {
+        $entityManager = $this->getEntityManager();
 
+        $query = $entityManager->createQuery(
+            'SELECT a
+            FROM App\Entity\Articles a
+            WHERE a.idarticle IN (:idarticle)'
+        )->setParameter('idarticle', $keys);
+
+        /* dump($query->getResult()); */
+        // returns an array of Product objects
+        return $query->getResult();
+    }
     /*
 public function findOneBySomeField($value): ?Articles
 {

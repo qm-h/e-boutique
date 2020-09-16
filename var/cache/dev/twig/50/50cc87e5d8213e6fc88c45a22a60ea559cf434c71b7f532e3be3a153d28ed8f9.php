@@ -900,6 +900,6 @@ class __TwigTemplate_cc014a39dc5726018d119df16176c780e875480ff58a6dffae23c334235
         {% endautoescape %}</script>
     </div>
 {% endmacro %}
-", "@WebProfiler/Collector/time.html.twig", "C:\\xampp\\htdocs\\Symfony\\e-boutique\\vendor\\symfony\\web-profiler-bundle\\Resources\\views\\Collector\\time.html.twig");
+", "@WebProfiler/Collector/time.html.twig", "C:\\xampp\\htdocs\\Symfony\\test\\vendor\\symfony\\web-profiler-bundle\\Resources\\views\\Collector\\time.html.twig");
     }
 }

@@ -134,17 +134,17 @@ class __TwigTemplate_ddfeabe43a2cc8df59fcb43155eb24962425fd7cb0b8de6a30c6f903496
         $context['_seq'] = twig_ensure_traversable((isset($context["articles"]) || array_key_exists("articles", $context) ? $context["articles"] : (function () { throw new RuntimeError('Variable "articles" does not exist.', 29, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["article"]) {
             // line 30
-            echo "      <div class=\"card col-lg-4 col-md-6 col-sm-6 col-12\">
+            echo "      <div class=\"card col-lg-4 col-md-6 col-sm-6 col-12 p-3\" id=\"carte\">
+        <span class=\"font-weight-bold text-center\"><i>";
+            // line 31
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["article"], "nomarticle", [], "any", false, false, false, 31), "html", null, true);
+            echo "</i></span> <hr>             
         <div class=\"card-body text-center\" width=\"261\">
           <img src=\"";
-            // line 32
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("image/" . twig_get_attribute($this->env, $this->source, $context["article"], "imagearticle", [], "any", false, false, false, 32))), "html", null, true);
+            // line 33
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("image/" . twig_get_attribute($this->env, $this->source, $context["article"], "imagearticle", [], "any", false, false, false, 33))), "html", null, true);
             echo "\" class=\"card-img-top img-fluid w-75\" alt=\"\"> <hr>
             <div class=\"card-title\">
-              <span class=\"font-weight-bold\"><i>";
-            // line 34
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["article"], "nomarticle", [], "any", false, false, false, 34), "html", null, true);
-            echo "</i></span> <hr>             
             </div>
 
             <div class=\"card-text text-justify\">
@@ -159,19 +159,52 @@ class __TwigTemplate_ddfeabe43a2cc8df59fcb43155eb24962425fd7cb0b8de6a30c6f903496
             // line 42
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["article"], "prixarticle", [], "any", false, false, false, 42), "html", null, true);
             echo " €</p>
-                  <button type=\"button\" class=\"btn btn-info\">+</button>
+
+                 <form method=\"post\" action=\"";
+            // line 44
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("add_panier");
+            echo "\">
+                 
+              <input name=\"prixarticle\" value = \"";
+            // line 46
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["article"], "prixarticle", [], "any", false, false, false, 46), "html", null, true);
+            echo "\" type=\"hidden\">
+              <input name=\"idarticle\" value = \"";
+            // line 47
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["article"], "getIdarticle", [], "any", false, false, false, 47), "html", null, true);
+            echo "\" type=\"hidden\">
+              <button type=\"submit\" class=\"btn btn-info btn-sm\">
+              <i class=\"ri-shopping-basket-2-line\"></i>
+              </button>
+
+              </form>
                 </div>
             </div>
         </div>
       </div>
+
     ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['article'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 49
+        // line 59
         echo "  </div>
-</div> 
+</div>  
+    ";
+        // line 61
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable((isset($context["articles"]) || array_key_exists("articles", $context) ? $context["articles"] : (function () { throw new RuntimeError('Variable "articles" does not exist.', 61, $this->source); })()));
+        foreach ($context['_seq'] as $context["_key"] => $context["article"]) {
+            // line 62
+            echo "      
+        ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['article'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 64
+        echo " 
  ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -216,7 +249,7 @@ class __TwigTemplate_ddfeabe43a2cc8df59fcb43155eb24962425fd7cb0b8de6a30c6f903496
 
     public function getDebugInfo()
     {
-        return array (  195 => 7,  185 => 6,  173 => 49,  160 => 42,  153 => 38,  146 => 34,  141 => 32,  137 => 30,  133 => 29,  123 => 21,  112 => 19,  109 => 18,  105 => 17,  100 => 15,  92 => 9,  89 => 6,  79 => 5,  60 => 3,  37 => 1,);
+        return array (  228 => 7,  218 => 6,  207 => 64,  200 => 62,  196 => 61,  192 => 59,  174 => 47,  170 => 46,  165 => 44,  160 => 42,  153 => 38,  145 => 33,  140 => 31,  137 => 30,  133 => 29,  123 => 21,  112 => 19,  109 => 18,  105 => 17,  100 => 15,  92 => 9,  89 => 6,  79 => 5,  60 => 3,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -250,11 +283,11 @@ class __TwigTemplate_ddfeabe43a2cc8df59fcb43155eb24962425fd7cb0b8de6a30c6f903496
 <div class=\"container\">
   <div class=\"row justify-content-center\">
     {% for article in articles %}
-      <div class=\"card col-lg-4 col-md-6 col-sm-6 col-12\">
+      <div class=\"card col-lg-4 col-md-6 col-sm-6 col-12 p-3\" id=\"carte\">
+        <span class=\"font-weight-bold text-center\"><i>{{article.nomarticle}}</i></span> <hr>             
         <div class=\"card-body text-center\" width=\"261\">
           <img src=\"{{ asset ('image/' ~ article.imagearticle )}}\" class=\"card-img-top img-fluid w-75\" alt=\"\"> <hr>
             <div class=\"card-title\">
-              <span class=\"font-weight-bold\"><i>{{article.nomarticle}}</i></span> <hr>             
             </div>
 
             <div class=\"card-text text-justify\">
@@ -263,16 +296,30 @@ class __TwigTemplate_ddfeabe43a2cc8df59fcb43155eb24962425fd7cb0b8de6a30c6f903496
               <div class=\"col-12 d-flex justify-content-center\">
                 <div class=\"\">
                   <p class=\"font-weight-bold\">{{article.prixarticle}} €</p>
-                  <button type=\"button\" class=\"btn btn-info\">+</button>
+
+                 <form method=\"post\" action=\"{{ path('add_panier') }}\">
+                 
+              <input name=\"prixarticle\" value = \"{{article.prixarticle}}\" type=\"hidden\">
+              <input name=\"idarticle\" value = \"{{article.getIdarticle}}\" type=\"hidden\">
+              <button type=\"submit\" class=\"btn btn-info btn-sm\">
+              <i class=\"ri-shopping-basket-2-line\"></i>
+              </button>
+
+              </form>
                 </div>
             </div>
         </div>
       </div>
+
     {% endfor %}
   </div>
-</div> 
+</div>  
+    {% for article in articles %}
+      
+        {% endfor %}
+ 
  {% endblock %}  
 
-", "articles/index.html.twig", "C:\\xampp\\htdocs\\Symfony\\e-boutique\\templates\\articles\\index.html.twig");
+", "articles/index.html.twig", "C:\\xampp\\htdocs\\Symfony\\test\\templates\\articles\\index.html.twig");
     }
 }

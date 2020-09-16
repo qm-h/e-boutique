@@ -16,6 +16,8 @@ return [
         '/' => [[['_route' => 'app_homepage', '_controller' => 'App\\Controller\\ArticlesController::all'], null, null, null, false, false, null]],
         '/categories' => [[['_route' => 'categories', '_controller' => 'App\\Controller\\CategoriesController::index'], null, null, null, false, false, null]],
         '/commandes' => [[['_route' => 'commandes', '_controller' => 'App\\Controller\\CommandesController::index'], null, null, null, false, false, null]],
+        '/panier' => [[['_route' => 'app_panier', '_controller' => 'App\\Controller\\PanierController::index'], null, null, null, false, false, null]],
+        '/panier/add' => [[['_route' => 'add_panier', '_controller' => 'App\\Controller\\PanierController::add'], null, null, null, false, false, null]],
         '/register' => [[['_route' => 'app_register', '_controller' => 'App\\Controller\\RegistrationController::register'], null, null, null, false, false, null]],
         '/login' => [[['_route' => 'app_login', '_controller' => 'App\\Controller\\SecurityController::login'], null, null, null, false, false, null]],
         '/logout' => [[['_route' => 'app_logout', '_controller' => 'App\\Controller\\SecurityController::logout'], null, null, null, false, false, null]],
@@ -39,6 +41,7 @@ return [
                     .')'
                 .')'
                 .'|/article/([^/]++)(*:186)'
+                .'|/panier/remove/([^/]++)/([^/]++)(*:226)'
             .')/?$}sDu',
     ],
     [ // $dynamicRoutes
@@ -49,8 +52,9 @@ return [
         136 => [[['_route' => '_profiler_exception', '_controller' => 'web_profiler.controller.exception_panel::body'], ['token'], null, null, false, false, null]],
         149 => [[['_route' => '_profiler_exception_css', '_controller' => 'web_profiler.controller.exception_panel::stylesheet'], ['token'], null, null, false, false, null]],
         159 => [[['_route' => '_profiler', '_controller' => 'web_profiler.controller.profiler::panelAction'], ['token'], null, null, false, true, null]],
-        186 => [
-            [['_route' => 'categorie_article', '_controller' => 'App\\Controller\\ArticlesController::categorie'], ['categorie'], null, null, false, true, null],
+        186 => [[['_route' => 'categorie_article', '_controller' => 'App\\Controller\\ArticlesController::categorie'], ['categorie'], null, null, false, true, null]],
+        226 => [
+            [['_route' => 'cart_remove', '_controller' => 'App\\Controller\\PanierController::remove'], ['id', 'prix'], null, null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],
     ],

@@ -230,6 +230,6 @@ class __TwigTemplate_1e3a7e52a18e1006a5fe3c9e1906d189c623bcc441bc18966ea276ae24c
     {{ form_end(registrationForm) }}
     </div>
 {% endblock %}
-", "registration/register.html.twig", "C:\\xampp\\htdocs\\Symfony\\e-boutique\\templates\\registration\\register.html.twig");
+", "registration/register.html.twig", "C:\\xampp\\htdocs\\Symfony\\test\\templates\\registration\\register.html.twig");
     }
 }
