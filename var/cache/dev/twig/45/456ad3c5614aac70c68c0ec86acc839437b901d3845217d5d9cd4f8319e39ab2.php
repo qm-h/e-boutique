@@ -66,7 +66,7 @@ class __TwigTemplate_850b81e4a344ea8e9b604c355fba27cb162c17af910461f95b502c344a4
         ";
         // line 21
         $this->displayBlock('body', $context, $blocks);
-        // line 65
+        // line 84
         echo "    </body>
 </html>
 ";
@@ -163,7 +163,7 @@ class __TwigTemplate_850b81e4a344ea8e9b604c355fba27cb162c17af910461f95b502c344a4
          ";
         // line 23
         $this->displayBlock('header', $context, $blocks);
-        // line 64
+        // line 83
         echo "        ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -198,39 +198,75 @@ class __TwigTemplate_850b81e4a344ea8e9b604c355fba27cb162c17af910461f95b502c344a4
                 <li class=\"nav-item active\">
                     <label>The best online store, for real<span class=\"sr-only\">(current)</span></label>
                 </li>
-               
+                ";
+        // line 35
+        if (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 35, $this->source); })()), "user", [], "any", false, false, false, 35)) {
+            // line 36
+            echo "                <li class=\"nav-item\">
+                <span class=\"nav-item active\"> | </span>
+                </li>
+                <li class=\"nav-item active\">             
+                <span>Connecté en tant que 
+                ";
+            // line 41
+            if ((0 === twig_compare(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 41, $this->source); })()), "user", [], "any", false, false, false, 41), "roles", [], "any", false, false, false, 41), 0, [], "array", false, false, false, 41), "ROLE_ADMIN"))) {
+                // line 42
+                echo "                    Administrateur
+                ";
+            } elseif ((0 === twig_compare(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source,             // line 43
+(isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 43, $this->source); })()), "user", [], "any", false, false, false, 43), "roles", [], "any", false, false, false, 43), 0, [], "array", false, false, false, 43), "ROLE_USER"))) {
+                // line 44
+                echo "                ";
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 44, $this->source); })()), "user", [], "any", false, false, false, 44), "username", [], "any", false, false, false, 44), "html", null, true);
+                echo "
+                ";
+            }
+            // line 46
+            echo "                </span>
+                </li>
+                ";
+        }
+        // line 49
+        echo "                
                 </ul>
-                <div class=\"col-2\">
+                ";
+        // line 52
+        echo "
+
+                ";
+        // line 55
+        echo "                <div class=\"col-2\">
+
                             <a href=\" ";
-        // line 38
+        // line 57
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_panier");
         echo " \" class=\"notification\" type=\"button\">
                             <span><i class=\"ri-shopping-cart-line\"></i>
                             </span>
                             ";
-        // line 41
-        if (twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 41, $this->source); })()), "session", [], "any", false, false, false, 41), "get", [0 => "panier"], "method", false, false, false, 41)) {
-            // line 42
-            echo "                                                    <span class=\"badge\">";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 42, $this->source); })()), "session", [], "any", false, false, false, 42), "get", [0 => "panier"], "method", false, false, false, 42), "getCount", [], "any", false, false, false, 42), "html", null, true);
+        // line 60
+        if (twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 60, $this->source); })()), "session", [], "any", false, false, false, 60), "get", [0 => "panier"], "method", false, false, false, 60)) {
+            // line 61
+            echo "                                <span class=\"badge\">";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 61, $this->source); })()), "session", [], "any", false, false, false, 61), "get", [0 => "panier"], "method", false, false, false, 61), "getCount", [], "any", false, false, false, 61), "html", null, true);
             echo "</span>
-                                ";
+                            ";
         } else {
-            // line 44
+            // line 63
             echo "                            <span class=\"badge\">0</span>
                             ";
         }
-        // line 46
+        // line 65
         echo "                            </a>
 
             </div>   
                 ";
-        // line 49
-        if (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 49, $this->source); })()), "user", [], "any", false, false, false, 49)) {
-            // line 50
+        // line 68
+        if (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 68, $this->source); })()), "user", [], "any", false, false, false, 68)) {
+            // line 69
             echo "                        
                             <a href=\"";
-            // line 51
+            // line 70
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_logout");
             echo "\"><button class=\"btn btn-sm btn-outline-light\" type=\"submit\">
                             Déconnnexion
@@ -238,7 +274,7 @@ class __TwigTemplate_850b81e4a344ea8e9b604c355fba27cb162c17af910461f95b502c344a4
                         
                 ";
         } else {
-            // line 56
+            // line 75
             echo "                        <a href=\"";
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_login");
             echo "\">
@@ -247,7 +283,7 @@ class __TwigTemplate_850b81e4a344ea8e9b604c355fba27cb162c17af910461f95b502c344a4
                         </button></a>
                 ";
         }
-        // line 61
+        // line 80
         echo "            </div>
             </nav>
          ";
@@ -266,7 +302,7 @@ class __TwigTemplate_850b81e4a344ea8e9b604c355fba27cb162c17af910461f95b502c344a4
 
     public function getDebugInfo()
     {
-        return array (  251 => 61,  242 => 56,  234 => 51,  231 => 50,  229 => 49,  224 => 46,  220 => 44,  214 => 42,  212 => 41,  206 => 38,  190 => 25,  187 => 24,  177 => 23,  167 => 64,  165 => 23,  162 => 22,  152 => 21,  139 => 14,  129 => 13,  117 => 11,  111 => 7,  101 => 6,  82 => 5,  70 => 65,  68 => 21,  63 => 18,  60 => 13,  58 => 6,  54 => 5,  48 => 1,);
+        return array (  287 => 80,  278 => 75,  270 => 70,  267 => 69,  265 => 68,  260 => 65,  256 => 63,  250 => 61,  248 => 60,  242 => 57,  238 => 55,  234 => 52,  230 => 49,  225 => 46,  219 => 44,  217 => 43,  214 => 42,  212 => 41,  205 => 36,  203 => 35,  190 => 25,  187 => 24,  177 => 23,  167 => 83,  165 => 23,  162 => 22,  152 => 21,  139 => 14,  129 => 13,  117 => 11,  111 => 7,  101 => 6,  82 => 5,  70 => 84,  68 => 21,  63 => 18,  60 => 13,  58 => 6,  54 => 5,  48 => 1,);
     }
 
     public function getSourceContext()
@@ -305,15 +341,34 @@ class __TwigTemplate_850b81e4a344ea8e9b604c355fba27cb162c17af910461f95b502c344a4
                 <li class=\"nav-item active\">
                     <label>The best online store, for real<span class=\"sr-only\">(current)</span></label>
                 </li>
-               
+                {% if app.user %}
+                <li class=\"nav-item\">
+                <span class=\"nav-item active\"> | </span>
+                </li>
+                <li class=\"nav-item active\">             
+                <span>Connecté en tant que 
+                {% if app.user.roles[0] == \"ROLE_ADMIN\" %}
+                    Administrateur
+                {% elseif app.user.roles[0] == \"ROLE_USER\" %}
+                {{ app.user.username}}
+                {% endif %}
+                </span>
+                </li>
+                {% endif %}
+                
                 </ul>
+                {# {% if %} #}
+
+
+                {# {% endif %} #}
                 <div class=\"col-2\">
+
                             <a href=\" {{path('app_panier') }} \" class=\"notification\" type=\"button\">
                             <span><i class=\"ri-shopping-cart-line\"></i>
                             </span>
                             {% if app.session.get('panier') %}
-                                                    <span class=\"badge\">{{app.session.get('panier').getCount}}</span>
-                                {% else %}
+                                <span class=\"badge\">{{app.session.get('panier').getCount}}</span>
+                            {% else %}
                             <span class=\"badge\">0</span>
                             {% endif  %}
                             </a>

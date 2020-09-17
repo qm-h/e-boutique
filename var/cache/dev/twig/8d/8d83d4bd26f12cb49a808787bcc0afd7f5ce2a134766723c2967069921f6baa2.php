@@ -1882,6 +1882,6 @@ class __TwigTemplate_d2bd3d91b2930a0452a8ec07f05688be7ba2e05aced854f25fde818489b
         </tbody>
     </table>
 {% endmacro %}
-", "@Doctrine/Collector/db.html.twig", "C:\\xampp\\htdocs\\Symfony\\test\\vendor\\doctrine\\doctrine-bundle\\Resources\\views\\Collector\\db.html.twig");
+", "@Doctrine/Collector/db.html.twig", "C:\\xampp\\htdocs\\Symfony\\e-boutique\\vendor\\doctrine\\doctrine-bundle\\Resources\\views\\Collector\\db.html.twig");
     }
 }

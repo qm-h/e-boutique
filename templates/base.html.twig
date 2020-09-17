@@ -32,15 +32,34 @@
                 <li class="nav-item active">
                     <label>The best online store, for real<span class="sr-only">(current)</span></label>
                 </li>
-               
+                {% if app.user %}
+                <li class="nav-item">
+                <span class="nav-item active"> | </span>
+                </li>
+                <li class="nav-item active">             
+                <span>Connecté en tant que 
+                {% if app.user.roles[0] == "ROLE_ADMIN" %}
+                    Administrateur
+                {% elseif app.user.roles[0] == "ROLE_USER" %}
+                {{ app.user.username}}
+                {% endif %}
+                </span>
+                </li>
+                {% endif %}
+                
                 </ul>
+                {# {% if %} #}
+
+
+                {# {% endif %} #}
                 <div class="col-2">
+
                             <a href=" {{path('app_panier') }} " class="notification" type="button">
                             <span><i class="ri-shopping-cart-line"></i>
                             </span>
                             {% if app.session.get('panier') %}
-                                                    <span class="badge">{{app.session.get('panier').getCount}}</span>
-                                {% else %}
+                                <span class="badge">{{app.session.get('panier').getCount}}</span>
+                            {% else %}
                             <span class="badge">0</span>
                             {% endif  %}
                             </a>

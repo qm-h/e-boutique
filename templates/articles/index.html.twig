@@ -9,16 +9,26 @@
     {% endblock %}
     {% for message in app.flashes('demande') %}
         <div class="flash-demande">
-          <div class="alert">
+          <div class="alert_error">
             {{message}}
           </div>
         </div>
     {% endfor %} 
+    
+    
 <div class="container">
 <div class="row">
     <nav class="col-6 navbar navbar-expand-md ml-4">
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
+            {% if is_granted('ROLE_ADMIN')  %}
+              <li class="nav-item">
+                    <a class="nav-link link-navi" href="{{path('creation_article')}}"><span>Création</span></a>
+              </li>
+              <li class="nav-item">
+                <span class="nav-link text-info">|</span>
+              </li>
+            {% endif %}
                 <li class="nav-item">
                     <a class="nav-link link-navi" href="{{path('app_homepage')}}"><span>Toutes les catégories</span></a>
                 </li>

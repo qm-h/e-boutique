@@ -55,24 +55,26 @@ body {
     transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
     -webkit-box-shadow: none;
     box-shadow: none;
-    border: 1px solid #17a2b8;
+    border: 3px solid #17a2b8;
 }
 
 .carte:hover {
-    box-shadow: 15px 15px 27px #b8b8b8, -15px -15px 27px #b8b8b8;
-    -webkit-box-shadow: 15px 15px 27px #b8b8b8, -15px -15px 27px #b8b8b8;
+
+    box-shadow: 15px 15px 27px #cfcfcf, -15px -15px 27px #ffffff;
+    -webkit-box-shadow: 15px 15px 27px #cfcfcf, -15px -15px 27px #ffffff;
     border: 1px solid #17a2b8;
-    background-color: #17a2b8;
+    background-color: #ffffff;
 
 
 }
 
 .carte:hover .des-text {
-    background-color: #158da0;
-    height: 17.5em;
-    width: 11em;
+    background-color: #fff;
+    height: 17em;
+    width: 13em;
     font-size: 15px;
     position: absolute;
+    left: 0.5em;
     bottom: 0em;
     -webkit-transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
     -o-transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
@@ -82,12 +84,13 @@ body {
     opacity: 1;
     border-top-right-radius: 10px;
     border-top-left-radius: 10px;
-    color: #fff;
+    border: none;
+    color: #17a2b8;
 }
 
 .carte:hover #img2,
 .carte:hover .banner {
-    opacity: 0;
+    opacity: 0.5;
 }
 
 .banner {
@@ -126,12 +129,52 @@ body {
 }
 
 
-.alert {
-    width: 250px;
+.alert_error {
+    width: 225px;
     position: absolute;
     right: 3px;
     top: 63px;
+    text-align: center;
     background-color: #f44336;
+    box-shadow: 3px 2px 34px -1px #00000056;
+    color: white;
+    border-radius: 10px;
+    animation: fadeOut 3s linear forwards;
+    z-index: 1;
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    90% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+
+    99% {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+
+.alert_success {
+    width: 225px;
+    position: absolute;
+    left: 3px;
+    top: 63px;
+    text-align: center;
+    background-color: #10b310;
     box-shadow: 3px 2px 34px -1px #00000056;
     color: white;
     border-radius: 10px;

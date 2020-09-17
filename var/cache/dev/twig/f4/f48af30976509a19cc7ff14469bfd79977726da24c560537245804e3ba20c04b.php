@@ -95,7 +95,7 @@ class __TwigTemplate_ddfeabe43a2cc8df59fcb43155eb24962425fd7cb0b8de6a30c6f903496
         foreach ($context['_seq'] as $context["_key"] => $context["message"]) {
             // line 11
             echo "        <div class=\"flash-demande\">
-          <div class=\"alert\">
+          <div class=\"alert_error\">
             ";
             // line 13
             echo twig_escape_filter($this->env, $context["message"], "html", null, true);
@@ -109,30 +109,48 @@ class __TwigTemplate_ddfeabe43a2cc8df59fcb43155eb24962425fd7cb0b8de6a30c6f903496
         $context = array_intersect_key($context, $_parent) + $_parent;
         // line 16
         echo " 
+    
+    
 <div class=\"container\">
 <div class=\"row\">
     <nav class=\"col-6 navbar navbar-expand-md ml-4\">
         <div class=\"collapse navbar-collapse\" id=\"navbarSupportedContent\">
             <ul class=\"navbar-nav mr-auto\">
-                <li class=\"nav-item\">
+            ";
+        // line 24
+        if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_ADMIN")) {
+            // line 25
+            echo "              <li class=\"nav-item\">
                     <a class=\"nav-link link-navi\" href=\"";
-        // line 23
+            // line 26
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("creation_article");
+            echo "\"><span>Création</span></a>
+              </li>
+              <li class=\"nav-item\">
+                <span class=\"nav-link text-info\">|</span>
+              </li>
+            ";
+        }
+        // line 32
+        echo "                <li class=\"nav-item\">
+                    <a class=\"nav-link link-navi\" href=\"";
+        // line 33
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_homepage");
         echo "\"><span>Toutes les catégories</span></a>
                 </li>
                  ";
-        // line 25
+        // line 35
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["categories"]) || array_key_exists("categories", $context) ? $context["categories"] : (function () { throw new RuntimeError('Variable "categories" does not exist.', 25, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["categories"]) || array_key_exists("categories", $context) ? $context["categories"] : (function () { throw new RuntimeError('Variable "categories" does not exist.', 35, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["categorie"]) {
-            // line 26
+            // line 36
             echo "                <li class=\"nav-item\">
                 
                     <a class=\"nav-link  ml-4 link-navi\" href=\"/article/";
-            // line 28
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["categorie"], "idcategorie", [], "any", false, false, false, 28), "html", null, true);
+            // line 38
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["categorie"], "idcategorie", [], "any", false, false, false, 38), "html", null, true);
             echo "\"><span>";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["categorie"], "nomcategorie", [], "any", false, false, false, 28), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["categorie"], "nomcategorie", [], "any", false, false, false, 38), "html", null, true);
             echo "</span></a>
                 
                 </li>
@@ -141,7 +159,7 @@ class __TwigTemplate_ddfeabe43a2cc8df59fcb43155eb24962425fd7cb0b8de6a30c6f903496
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['categorie'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 31
+        // line 41
         echo " 
             </ul>
         </div>
@@ -151,42 +169,42 @@ class __TwigTemplate_ddfeabe43a2cc8df59fcb43155eb24962425fd7cb0b8de6a30c6f903496
 
   <div class=\"row justify-content-center \">
     ";
-        // line 39
+        // line 49
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["articles"]) || array_key_exists("articles", $context) ? $context["articles"] : (function () { throw new RuntimeError('Variable "articles" does not exist.', 39, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["articles"]) || array_key_exists("articles", $context) ? $context["articles"] : (function () { throw new RuntimeError('Variable "articles" does not exist.', 49, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["article"]) {
-            // line 40
+            // line 50
             echo "      <div class=\"card col-lg-3 col-md-4 col-sm-6 col-6 m-3 carte\">             
         <div class=\"card-body text-center\" width=\"261\">
           <header class=\"banner\"><img class=\"img-fluid img-thumbnail\" src=\"";
-            // line 42
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("image/" . twig_get_attribute($this->env, $this->source, $context["article"], "imagearticle", [], "any", false, false, false, 42))), "html", null, true);
+            // line 52
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("image/" . twig_get_attribute($this->env, $this->source, $context["article"], "imagearticle", [], "any", false, false, false, 52))), "html", null, true);
             echo "\"  id=\"img2\" alt=\"\"></header>
             <div class=\"card-title\">
             </div>
             <div class=\"des-text\">
             <div class=\"card-text text-justify carte-description\">
             <span class=\" text-center\"><i>";
-            // line 47
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["article"], "nomarticle", [], "any", false, false, false, 47), "html", null, true);
+            // line 57
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["article"], "nomarticle", [], "any", false, false, false, 57), "html", null, true);
             echo " :</i></span> <br>
               <label>";
-            // line 48
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["article"], "descriptionarticle", [], "any", false, false, false, 48), "html", null, true);
+            // line 58
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["article"], "descriptionarticle", [], "any", false, false, false, 58), "html", null, true);
             echo "</label> <hr>
             </div >
               <div class=\"col-12 d-flex justify-content-center\">
                 <div class=\"\">
                   <p class=\"font-weight-bold\">";
-            // line 52
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["article"], "prixarticle", [], "any", false, false, false, 52), "html", null, true);
+            // line 62
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["article"], "prixarticle", [], "any", false, false, false, 62), "html", null, true);
             echo " €</p>     
 
               
               <button type=\"submit\" class=\"btn btn-sm btn-envoie\">
               <a class=\"ajout-link\" href=\"";
-            // line 56
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("modif_panier", ["id" => twig_get_attribute($this->env, $this->source, $context["article"], "idarticle", [], "any", false, false, false, 56), "prix" => twig_get_attribute($this->env, $this->source, $context["article"], "prixarticle", [], "any", false, false, false, 56), "action" => 1]), "html", null, true);
+            // line 66
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("modif_panier", ["id" => twig_get_attribute($this->env, $this->source, $context["article"], "idarticle", [], "any", false, false, false, 66), "prix" => twig_get_attribute($this->env, $this->source, $context["article"], "prixarticle", [], "any", false, false, false, 66), "action" => 1]), "html", null, true);
             echo "\">
               Ajouter au <i class=\"ri-shopping-basket-2-line\"></i>
               </a>
@@ -205,7 +223,7 @@ class __TwigTemplate_ddfeabe43a2cc8df59fcb43155eb24962425fd7cb0b8de6a30c6f903496
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['article'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 70
+        // line 80
         echo "  </div>
 </div>  
     
@@ -255,7 +273,7 @@ class __TwigTemplate_ddfeabe43a2cc8df59fcb43155eb24962425fd7cb0b8de6a30c6f903496
 
     public function getDebugInfo()
     {
-        return array (  233 => 7,  223 => 6,  209 => 70,  189 => 56,  182 => 52,  175 => 48,  171 => 47,  163 => 42,  159 => 40,  155 => 39,  145 => 31,  133 => 28,  129 => 26,  125 => 25,  120 => 23,  111 => 16,  101 => 13,  97 => 11,  92 => 10,  89 => 6,  79 => 5,  60 => 3,  37 => 1,);
+        return array (  251 => 7,  241 => 6,  227 => 80,  207 => 66,  200 => 62,  193 => 58,  189 => 57,  181 => 52,  177 => 50,  173 => 49,  163 => 41,  151 => 38,  147 => 36,  143 => 35,  138 => 33,  135 => 32,  126 => 26,  123 => 25,  121 => 24,  111 => 16,  101 => 13,  97 => 11,  92 => 10,  89 => 6,  79 => 5,  60 => 3,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -271,16 +289,26 @@ class __TwigTemplate_ddfeabe43a2cc8df59fcb43155eb24962425fd7cb0b8de6a30c6f903496
     {% endblock %}
     {% for message in app.flashes('demande') %}
         <div class=\"flash-demande\">
-          <div class=\"alert\">
+          <div class=\"alert_error\">
             {{message}}
           </div>
         </div>
     {% endfor %} 
+    
+    
 <div class=\"container\">
 <div class=\"row\">
     <nav class=\"col-6 navbar navbar-expand-md ml-4\">
         <div class=\"collapse navbar-collapse\" id=\"navbarSupportedContent\">
             <ul class=\"navbar-nav mr-auto\">
+            {% if is_granted('ROLE_ADMIN')  %}
+              <li class=\"nav-item\">
+                    <a class=\"nav-link link-navi\" href=\"{{path('creation_article')}}\"><span>Création</span></a>
+              </li>
+              <li class=\"nav-item\">
+                <span class=\"nav-link text-info\">|</span>
+              </li>
+            {% endif %}
                 <li class=\"nav-item\">
                     <a class=\"nav-link link-navi\" href=\"{{path('app_homepage')}}\"><span>Toutes les catégories</span></a>
                 </li>
