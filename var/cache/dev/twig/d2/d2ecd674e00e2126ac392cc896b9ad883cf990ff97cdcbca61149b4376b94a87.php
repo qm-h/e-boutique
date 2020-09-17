@@ -66,7 +66,7 @@ class __TwigTemplate_a52d9122e092c8d30faacc1851a5a8e2daaad11613cafac296ca87ee6db
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
 
-        echo "Log in!";
+        echo "LineShop";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -102,40 +102,43 @@ class __TwigTemplate_a52d9122e092c8d30faacc1851a5a8e2daaad11613cafac296ca87ee6db
         }
         // line 14
         echo "
+     ";
+        // line 22
+        echo "
     ";
-        // line 15
-        if (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 15, $this->source); })()), "user", [], "any", false, false, false, 15)) {
-            // line 16
+        // line 23
+        if (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 23, $this->source); })()), "user", [], "any", false, false, false, 23)) {
+            // line 24
             echo "        <div class=\"mb-3\">
             Vous êtes connecté en tant que ";
-            // line 17
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 17, $this->source); })()), "user", [], "any", false, false, false, 17), "username", [], "any", false, false, false, 17), "html", null, true);
+            // line 25
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 25, $this->source); })()), "user", [], "any", false, false, false, 25), "username", [], "any", false, false, false, 25), "html", null, true);
             echo ", <a href=\"";
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_logout");
             echo "\">Déconnexion</a>
         </div>
     ";
         }
-        // line 20
+        // line 28
         echo "<div class=\"form-group \">
     <h2 class=\"h3 mb-3 font-weight-normal d-flex justify-content-center text-info\">Connectez-vous</h2>
     <label class=\"d-flex justify-content-center\" for=\"inputEmail\">Email</label>
     <input  type=\"email\" value=\"";
-        // line 23
-        echo twig_escape_filter($this->env, (isset($context["last_username"]) || array_key_exists("last_username", $context) ? $context["last_username"] : (function () { throw new RuntimeError('Variable "last_username" does not exist.', 23, $this->source); })()), "html", null, true);
+        // line 31
+        echo twig_escape_filter($this->env, (isset($context["last_username"]) || array_key_exists("last_username", $context) ? $context["last_username"] : (function () { throw new RuntimeError('Variable "last_username" does not exist.', 31, $this->source); })()), "html", null, true);
         echo "\" name=\"email\" id=\"inputEmail\" class=\"form-control\" required autofocus>
     <label class=\"d-flex justify-content-center\" for=\"inputPassword\">Password</label>
     <input type=\"password\" name=\"password\" id=\"inputPassword\" class=\"form-control\" required>
 
     <input type=\"hidden\" name=\"_csrf_token\"
            value=\"";
-        // line 28
+        // line 36
         echo twig_escape_filter($this->env, $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderCsrfToken("authenticate"), "html", null, true);
         echo "\"
     >
 
     ";
-        // line 41
+        // line 49
         echo "<hr>
 <div class=\"d-flex justify-content-center\">
     <button class=\"btn btn-sm btn-outline-info\" type=\"submit\">
@@ -144,7 +147,7 @@ class __TwigTemplate_a52d9122e092c8d30faacc1851a5a8e2daaad11613cafac296ca87ee6db
     </div>
     <div class=\"col-12 d-flex justify-content-center\">
         <small>Vous ne possédez pas de compte ? Inscrivez vous <a href=\"";
-        // line 48
+        // line 56
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_register");
         echo "\">ici</a></small>
     </div>
@@ -194,14 +197,14 @@ class __TwigTemplate_a52d9122e092c8d30faacc1851a5a8e2daaad11613cafac296ca87ee6db
 
     public function getDebugInfo()
     {
-        return array (  173 => 7,  163 => 6,  148 => 48,  139 => 41,  133 => 28,  125 => 23,  120 => 20,  112 => 17,  109 => 16,  107 => 15,  104 => 14,  98 => 12,  96 => 11,  92 => 9,  89 => 6,  79 => 5,  60 => 3,  37 => 1,);
+        return array (  176 => 7,  166 => 6,  151 => 56,  142 => 49,  136 => 36,  128 => 31,  123 => 28,  115 => 25,  112 => 24,  110 => 23,  107 => 22,  104 => 14,  98 => 12,  96 => 11,  92 => 9,  89 => 6,  79 => 5,  60 => 3,  37 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Source("{% extends 'base.html.twig' %}
 
-{% block title %}Log in!{% endblock %}
+{% block title %}LineShop{% endblock %}
 
 {% block body %}
     {% block header %}
@@ -212,6 +215,14 @@ class __TwigTemplate_a52d9122e092c8d30faacc1851a5a8e2daaad11613cafac296ca87ee6db
     {% if error %}
         <div class=\"alert alert-danger\">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
     {% endif %}
+
+     {# {% for message in app.flashes('demande') %}
+        <div class=\"flash-demande\">
+          <div class=\"alert\">
+            {{message}}
+          </div>
+        </div>
+    {% endfor %}  #}
 
     {% if app.user %}
         <div class=\"mb-3\">

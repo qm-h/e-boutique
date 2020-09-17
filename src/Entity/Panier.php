@@ -2,28 +2,13 @@
 
 namespace App\Entity;
 
-use Doctrine\ORM\Mapping as ORM;
 
-/**
- * @ORM\Entity(repositoryClass=PanierRepository::class)
- */
 class Panier
 {
-    /**
-     * @ORM\Id
-     * @ORM\GeneratedValue
-     * @ORM\Column(name="id", type="integer")
-     */
-    private $id;
-
-    /**
-     * @ORM\Column(type="array", nullable=true)
-     */
+   
     private $panier = [];
 
-    /**
-     * @ORM\Column(type="float", nullable=true)
-     */
+    
     private $total;
 
 
@@ -70,21 +55,27 @@ class Panier
         
     }
 
-    public function add(int $id, float $prix)
+    public function modifpanier(int $id, float $prix, int $action = null)
     {
         
-            
-        if (isset($this->panier[$id])) {
-            //create a new line and add it if empty
-            $this->panier[$id]++;
+
+        if (func_num_args() == 3) {
+            $this->total += ($prix * $action);
+            if (!isset($this->panier[$id])) {
+                //create a new line and add it if empty
+                $this->panier[$id] = $action;
+            } else {
+                $this->panier[$id] += $action;
+                if ($this->panier[$id] == 0) {
+                    unset($this->panier[$id]);
+                }
+            }
         } else {
-            $this->panier[$id] = 1;
+            $this->total -= ($prix * $this->panier[$id]);
+            unset($this->panier[$id]);
         }
-    
-        $this->total +=  $prix;
 
-        dump($this->total);
-
+        
     }
-   
+
 }

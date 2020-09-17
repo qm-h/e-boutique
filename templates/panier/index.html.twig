@@ -1,32 +1,34 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello CartController!{% endblock %}
+{% block title %}LineShop{% endblock %}
 
 {% block body %}
 {% block header %}
     {{ parent() }}
 {% endblock %}
- <div class="bg-light p-3">
-        <h1>Votre panier</h1>
-    </div>
+ 
     {% if panier | length > 0 %}
-    <table class="table">
+    <table class="table table-hover">
         <thead>
             <tr>
-                <th>Produit</th>
-                <th>Prix</th>
-                <th>Quantité</th>
+                <th scope="col"></th>
+                <th scope="col">Produit</th>
+                <th scope="col">Prix</th>
+                <th scope="col">Quantité</th>
             </tr>
         </thead>
-        <tbody>
+        <tbody class="body-table">
             {% for item in panier %}
                 <tr>
-                    <td> {{ item.nomarticle }} </td>
-                    <td> {{ item.prixarticle }} €</td>
-                    <td>  {{ app.session.get('panier').panier[item.idarticle] }}  </td>
-
-                    <td>
-                    <a href=" {{ path("cart_remove", {'id' : item.idarticle, 'prix' : item.prixarticle}) }} " class="btn btn-outline-danger btn-sm">
+                <td scope="row"><img src=" {{ asset ('image/' ~ item.imagearticle )}}" class="img-fluid img-panier"></td>
+                    <td class="align-middle"> {{ item.nomarticle }} </td>
+                    <td class="align-middle"> {{ item.prixarticle }} €</td>
+                    <td class="align-middle">
+                    <a href="{{ path("modif_panier", {'id' : item.idarticle, 'prix' : item.prixarticle, 'action' : -1 }) }}"><button class="m-p-btn">-</button> </a>  
+                    <label>{{ app.session.get('panier').panier[item.idarticle] }}</label> 
+                    <a href="{{ path("modif_panier", {'id' : item.idarticle, 'prix' : item.prixarticle, 'action' : 1 }) }}"> <button class="m-p-btn">+</button> </a> </td>
+                    <td class="align-middle">
+                    <a href=" {{ path("remove_all", {'id' : item.idarticle, 'prix' : item.prixarticle}) }} " class="btn btn-outline-danger btn-sm">
                     <i class="ri-delete-bin-6-line"></i>
                     </a>
                     </td>
@@ -66,4 +68,7 @@
     </table>
     
     {% endif %}
+    <div class="d-flex justify-content-center">
+    <button class="btn-command">Commander <i class="ri-arrow-right-s-line icon_arrow"></i></button>
+    </div>
 {% endblock %}

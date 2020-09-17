@@ -4,6 +4,8 @@ namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\HttpFoundation\Request;
+
 
 class UserAuthenticationController extends AbstractController
 {
@@ -12,8 +14,10 @@ class UserAuthenticationController extends AbstractController
      */
     public function index()
     {
+     
+        
         return $this->render('user_authentication/index.html.twig', [
-            'controller_name' => 'UserAuthenticationController',
+            'controller_name' => 'UserAuthenticationController','demande' => $msg
         ]);
     }
 }
