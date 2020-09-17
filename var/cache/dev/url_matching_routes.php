@@ -14,6 +14,7 @@ return [
         '/_profiler/phpinfo' => [[['_route' => '_profiler_phpinfo', '_controller' => 'web_profiler.controller.profiler::phpinfoAction'], null, null, null, false, false, null]],
         '/_profiler/open' => [[['_route' => '_profiler_open_file', '_controller' => 'web_profiler.controller.profiler::openAction'], null, null, null, false, false, null]],
         '/' => [[['_route' => 'app_homepage', '_controller' => 'App\\Controller\\ArticlesController::all'], null, null, null, false, false, null]],
+        '/articles/creation' => [[['_route' => 'creation_article', '_controller' => 'App\\Controller\\ArticlesController::creation'], null, null, null, false, false, null]],
         '/categories' => [[['_route' => 'categories', '_controller' => 'App\\Controller\\CategoriesController::index'], null, null, null, false, false, null]],
         '/commandes' => [[['_route' => 'commandes', '_controller' => 'App\\Controller\\CommandesController::index'], null, null, null, false, false, null]],
         '/panier' => [[['_route' => 'app_panier', '_controller' => 'App\\Controller\\PanierController::index'], null, null, null, false, false, null]],

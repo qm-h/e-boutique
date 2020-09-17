@@ -17,6 +17,7 @@ return [
     '_profiler_exception_css' => [['token'], ['_controller' => 'web_profiler.controller.exception_panel::stylesheet'], [], [['text', '/exception.css'], ['variable', '/', '[^/]++', 'token', true], ['text', '/_profiler']], [], []],
     'app_homepage' => [[], ['_controller' => 'App\\Controller\\ArticlesController::all'], [], [['text', '/']], [], []],
     'categorie_article' => [['categorie'], ['_controller' => 'App\\Controller\\ArticlesController::categorie'], [], [['variable', '/', '[^/]++', 'categorie', true], ['text', '/article']], [], []],
+    'creation_article' => [[], ['_controller' => 'App\\Controller\\ArticlesController::creation'], [], [['text', '/articles/creation']], [], []],
     'categories' => [[], ['_controller' => 'App\\Controller\\CategoriesController::index'], [], [['text', '/categories']], [], []],
     'commandes' => [[], ['_controller' => 'App\\Controller\\CommandesController::index'], [], [['text', '/commandes']], [], []],
     'app_panier' => [[], ['_controller' => 'App\\Controller\\PanierController::index'], [], [['text', '/panier']], [], []],

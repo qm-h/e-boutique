@@ -29,12 +29,24 @@
                 </ul>
                 {% if app.user %}
             <div class="col-2">
+
+
+                            
+
+                            {# {% if %} #}
+
+                             <a class="" href="{{path('creation_article')}}"><b>Création</b></a>
+
+                            {# {% endif %} #}
+
+                            
+
                             <a href=" {{path('app_panier') }} " class="notification" type="button">
                             <span><i class="ri-shopping-cart-line"></i>
                             </span>
                             {% if app.session.get('panier') %}
-                                                    <span class="badge">{{app.session.get('panier').getCount}}</span>
-                                {% else %}
+                                <span class="badge">{{app.session.get('panier').getCount}}</span>
+                            {% else %}
                             <span class="badge">0</span>
                             {% endif  %}
                             </a>

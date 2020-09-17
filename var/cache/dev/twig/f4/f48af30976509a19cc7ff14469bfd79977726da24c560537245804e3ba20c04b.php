@@ -320,6 +320,6 @@ class __TwigTemplate_ddfeabe43a2cc8df59fcb43155eb24962425fd7cb0b8de6a30c6f903496
  
  {% endblock %}  
 
-", "articles/index.html.twig", "C:\\xampp\\htdocs\\Symfony\\test\\templates\\articles\\index.html.twig");
+", "articles/index.html.twig", "C:\\xampp\\htdocs\\Symfony\\e-boutique\\templates\\articles\\index.html.twig");
     }
 }
