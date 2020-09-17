@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Log in!{% endblock %}
+{% block title %}LineShop{% endblock %}
 
 {% block body %}
     {% block header %}
@@ -11,6 +11,14 @@
     {% if error %}
         <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
     {% endif %}
+
+     {# {% for message in app.flashes('demande') %}
+        <div class="flash-demande">
+          <div class="alert">
+            {{message}}
+          </div>
+        </div>
+    {% endfor %}  #}
 
     {% if app.user %}
         <div class="mb-3">

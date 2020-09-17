@@ -9,6 +9,7 @@
 /var/
 /vendor/
 /templates/articles
+/.env
 ###< symfony/framework-bundle ###
 
 ###> symfony/phpunit-bridge ###

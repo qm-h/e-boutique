@@ -16,10 +16,14 @@ class PanierController extends AbstractController
     /**
      * @Route("/panier", name="app_panier")
      */
-    public function index()
+    public function index(SessionInterface $session)
     {
-        $session = new Session();
-        
+        $user = $this->getUser();
+        // $role = $user->getRoles();
+
+
+        if (!is_null($user)  /*&& $role[0] == "ROLE_ADMIN" */ ) {
+
         if ($session->get('panier')) {
 
             $keys = array_keys(
@@ -41,12 +45,19 @@ class PanierController extends AbstractController
                 $total = $session->get('panier')->getTotal();
                 
                 }
-           dump($total);
+          
         } else {
             $total = 0; 
 
             $panier = [];
         }
+    } else {
+        $this->addFlash(
+            'demande',
+            'Veuillez vous connecter pour accéder a votre panier'
+        );
+        return $this->redirectToRoute("app_homepage");
+    }
 
         return $this->render('panier/index.html.twig', array(
             'panier' => $panier, 'total' => $total
@@ -54,39 +65,41 @@ class PanierController extends AbstractController
     }
 
 
-
-    /** 
-     * @Route("/panier/add", name="add_panier")
+     /**
+     * @Route("/modifpanier/{id}/{prix}/{action}", name="modif_panier")
      */
-    public function add(Request $request, SessionInterface $session)
+    public function ModifPanier($id, $prix,$action,SessionInterface $session,Request $request )
     {
-        //$session->clear();
-
-
-        if ($session->get('panier')) {
-            $panier = $session->get('panier');
-        } else {
-            $panier = new Panier();
-        }
-        $panier->add($request->request->get('idarticle'), $request->request->get('prixarticle'));
         
-        $session->set('panier', $panier);
+        if ($session->get('panier')){
+            $panier = $session->get('panier');
+        }else{
+            $panier = new Panier();
+            $session->set('panier', $panier);
+        }
+       
 
-        //dump($panier); 
-        return $this->redirectToRoute("app_homepage");
+        $panier->modifpanier($id, $prix, $action);
+
+      
+        $session->set('panier', $panier);
+        
+        $referer = $request->headers->get('referer');
+    
+        return $this->redirect($referer);
     }
 
-    /** 
-     * @Route("/panier/remove/{id}/{prix}", name="cart_remove")
+    /**
+     * @Route("/delete/{id}/{prix}", name="remove_all")
      */
-    public function remove($id, $prix,SessionInterface $session)
+    public function removeAll($id, $prix, SessionInterface $session)
     {
-
+      
         $panier = $session->get('panier');
+        $panier->modifpanier($id, $prix);
+        $session->set('panier', $panier);
         
 
-        $session->set('panier', $panier);
-
-        return $this->redirectToRoute("app_panier");
+        return $this->redirectToRoute('app_panier');
     }
 }
